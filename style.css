@@ -1,0 +1,26 @@
+html, .Page{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-image: url("bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.mainPage{
+    display: block;
+}
+.nose{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+.gamePage{
+    display: none;
+}
+.gameWindow{
+    width: 1200px;
+    height: 800px;
+    background: #001b34;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Christmas presents cather</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body class="Page">
+    <div class="mainPage">
+        <div class="menu">
+            <button type="button" value="1" class="play" id="playId" onclick="changePage(value)">Play</button>
+            <button type="button" class="settings">Settings</button>
+            <button type="button" class="register">Register</button>
+            <button type="button" class="share">Share this game</button>
+        </div>
+        <div class="topPlayers">
+            <table class="topPlayersTable">
+                <tr>
+                    <th>Nickname</th>
+                    <th>Score</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="gamePage">
+        <button type="button" value="2" class="goOut" onclick="changePage(value)">Go out</button>
+        <div class="gameWindow">
+            <button class="startGame">Start</button>
+            <div class="gameContent">
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
