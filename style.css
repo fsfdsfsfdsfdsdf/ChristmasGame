@@ -10,17 +10,51 @@ html, .Page{
 .mainPage{
     display: block;
 }
-.nose{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-}
 .gamePage{
     display: none;
 }
 .gameWindow{
+    margin: 0 auto;
     width: 1200px;
     height: 800px;
     background: #001b34;
+}
+/*buttons*/
+.goOut{
+    border-radius: 100%;
+    height: 50px;
+    width: 50px;
+    background: red;
+}
+.startGame{
+    border-radius: 100%;
+    height: 100px;
+    width: 100px;
+    color: white;
+    font-size: 30px;
+    background: red;
+}
+.play{
+    border-radius: 100%;
+    height: 50px;
+    width: 50px;
+    background: red;
+}
+.settings{
+    border-radius: 100%;
+    height: 70px;
+    width: 70px;
+    background: red;
+}
+.register{
+    border-radius: 100%;
+    height: 80px;
+    width: 80px;
+    background: red;
+}
+.share{
+    border-radius: 100%;
+    height: 100px;
+    width: 100px;
+    background: red;
 }
