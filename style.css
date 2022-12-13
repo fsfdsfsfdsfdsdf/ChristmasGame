@@ -1,4 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital@1&display=swap');
 html, .Page{
+    flex-direction: column;
+    display: flex;
     width: 100%;
     height: 100%;
     margin: 0;
@@ -6,9 +9,21 @@ html, .Page{
     background-image: url("bg.png");
     background-repeat: no-repeat;
     background-size: cover;
+    font-family: 'Balsamiq Sans', cursive;
+}
+.topPlayersTable {
+    border: 3px solid black;
+}
+.topPlayersTable th{
+    font-size: 25px;
+}
+footer{
+    flex: 0 0 auto;
+    display: flex;
+    margin: 0 auto;
 }
 .mainPage{
-    display: block;
+    flex: 1 0 auto;
 }
 .gamePage{
     display: none;
@@ -21,54 +36,120 @@ html, .Page{
 }
 /*buttons*/
 .goOut{
-    border-radius: 100%;
-    height: 50px;
-    width: 50px;
-    background: red;
+    border: none;
+    height: 100px;
+    width: 100px;
+    font-size: 25px;
+    font-weight: bold;
+    font-family: 'Balsamiq Sans', cursive;
+    background: url("https://img.icons8.com/plasticine/100/null/exit.png") no-repeat;
+}
+.goOut:hover{
+    cursor: pointer;
 }
 .startGame{
-    border-radius: 100%;
+    border: none;
     height: 100px;
     width: 100px;
-    color: white;
-    font-size: 30px;
-    background: red;
+    font-size: 25px;
+    font-weight: bold;
+    font-family: 'Balsamiq Sans', cursive;
+    background: url("https://img.icons8.com/plasticine/100/play.png") no-repeat;
+}
+.startGame:hover{
+    cursor: pointer;
 }
 .play{
-    border-radius: 100%;
-    height: 50px;
-    width: 50px;
-    background: red;
+    border: none;
+    height: 200px;
+    width: 200px;
+    color: black;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Balsamiq Sans', cursive;
+    background: url("https://img.icons8.com/plasticine/200/null/play-button-circled.png") no-repeat;
+}
+.play:hover{
+    cursor: pointer;
 }
 .settings{
-    border-radius: 100%;
-    height: 70px;
-    width: 70px;
-    background: red;
+    border: none;
+    height: 200px;
+    width: 200px;
+    color: black;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Balsamiq Sans', cursive;
+    background: url("https://img.icons8.com/plasticine/200/null/settings.png") no-repeat;
+}
+.settings:hover{
+    cursor: pointer;
 }
 .register{
-    border-radius: 100%;
-    height: 80px;
-    width: 80px;
-    background: red;
+    border: none;
+    height: 200px;
+    width: 200px;
+    color: black;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Balsamiq Sans', cursive;
+    background: url("https://img.icons8.com/plasticine/200/null/login-rounded-right.png") no-repeat;
+}
+.register:hover{
+    cursor: pointer;
 }
 .share{
-    border-radius: 100%;
-    height: 100px;
-    width: 100px;
-    background: red;
+    border: none;
+    height: 200px;
+    width: 200px;
+    color: black;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Balsamiq Sans', cursive;
+    background: url("https://img.icons8.com/plasticine/200/null/share.png") no-repeat;
 }
-/*Popup*/
-.modal {
+.share:hover{
+    cursor: pointer;
+}
+/*settings popup*/
+.stngPop {
     display: none;
     position: fixed;
-    z-index: 1;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0,0,0,0.6);
+    background-color: rgba(0,0,0,0.8);
+    z-index: 1000;
+}
+.stngPop .settings_content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 20%;
+    z-index: 99999;
+
+}
+.stngPop .settings_content .close_settings_content {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* log/reg popup*/
+.modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8);
     z-index: 1000;
 }
 .modal .modal_content {
@@ -77,13 +158,83 @@ html, .Page{
     margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
+    width: 20%;
     z-index: 99999;
+
 }
 .modal .modal_content .close_modal_window {
     color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
+    cursor: pointer;
+}
+.divLogForm{
+    margin: 0 auto;
+    font-size: 16px;
+    padding: 50px;
+    text-align: center;
+}
+
+.divRegForm{
+    display: none;
+    font-size: 16px;
+    padding: 50px;
+    text-align: center;
+}
+
+.textAr{
+    width: 250px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    font-size: 16px;
+    text-align: center;
+    background-color: white;
+    background-repeat: no-repeat;
+    padding: 12px 20px 10px;
+    border-radius: 25px;
+    -webkit-transition: width 0.3s ease-in-out;
+    transition: width 0.3s ease-in-out;
+}
+.checkText{
+    display: none;
+}
+.textLog:hover{
+    cursor: pointer;
+}
+
+/*buttons for share site*/
+.share-buttons{
+    display: none;
+}
+.facebook {
+    background: url("https://img.icons8.com/plasticine/100/null/facebook-new.png") no-repeat;
+    border:none;
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+
+}
+.facebook:hover{
+    cursor: pointer;
+}
+.linkedIn {
+    background: url("https://img.icons8.com/plasticine/100/null/linkedin.png") no-repeat;
+    border:none;
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+}
+.linkedIn:hover{
+    cursor: pointer;
+}
+.telegram {
+    background: url("https://img.icons8.com/plasticine/100/null/telegram-app.png") no-repeat;
+    border:none;
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+}
+.telegram:hover{
     cursor: pointer;
 }

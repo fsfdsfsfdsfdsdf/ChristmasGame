@@ -4,28 +4,126 @@
     <meta charset="UTF-8">
     <title>Christmas presents cather</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital@1&display=swap" rel="stylesheet">
+
 </head>
 <body class="Page">
     <div class="mainPage">
-        <div class="menu">
-            <button type="button" value="1" class="play" id="playId" onclick="changePage(value)">Play</button>
-            <button type="button" class="settings">Settings</button>
-            <button type="button" class="register" onclick="loginPopup()">Register</button>
-            <button type="button" class="share">Share this game</button>
-        </div>
         <div class="topPlayers">
             <table class="topPlayersTable">
+                <h2 style="margin: 0;">TOP 10</h2>
+                <thead>
+                    <tr>
+                        <th>№</th>
+                        <th>Nickname</th>
+                        <th>Score</th>
+                    </tr>
+                </thead>
+                <tbody>
                 <tr>
-                    <th>Nickname</th>
-                    <th>Score</th>
+                    <td>1</td>
+                    <td>Test</td>
+                    <td>4500</td>
                 </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Test</td>
+                    <td>4500</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Test</td>
+                    <td>4500</td>
+                </tr>
+                </tbody>
             </table>
+        </div>
+        <div class="share-buttons">
+            <button
+                    class="facebook"
+                    onClick='window.open("https://www.facebook.com/sharer.php?u=workpanel.zzz.com.ua","sharer","status=0,toolbar=0,width=650,height=500");'
+                    title="Поделиться в Facebook">
+
+            </button>
+            <button
+                    class="telegram"
+                    onClick='window.open("https://telegram.me/share/url?url=workpanel.zzz.com.ua","sharer","status=0,toolbar=0,width=650,height=500");'
+                    title="Поделиться в Телеграм">
+            </button>
+            <button
+                    class="linkedIn"
+                    onClick='window.open("https://www.linkedin.com/sharing/share-offsite/?url=workpanel.zzz.com.ua","sharer","toolbar=0,status=0,width=650,height=500");'
+                    title="Поделиться в Linkedin">
+            </button>
+        </div>
+    </div>
+    <div id="settings" class="stngPop">
+        <div id="settings_content">
+            <span class="close_settings_content"></span>
+            <a>Music: <button class="musTurnOn">Turn on</button><button class="musTurnOff">Turn off</button></a><br>
+            <a>Sound effects: <button class="soundTurnOn">Turn on</button><button class="soundTurnOff">Turn off</button></a>
         </div>
     </div>
     <div id="my_modal" class="modal">
         <div class="modal_content">
             <span class="close_modal_window"></span>
-            <a>Тут пока ничего нет. Потому что мне выключили свет. Я бегал везде, где он появлялся, и просто не успел...</a>
+            <div class="divLogForm">
+                <form id="logForm" method="POST">
+                    <table>
+                        <tr>
+                            <td><input class="textAr" type="text" placeholder="Введите Ваш логин" required></td>
+                        </tr>
+                        <tr>
+                            <td><input class="textAr" type="password" placeholder="Введите Ваш пароль" required></td>
+                        </tr>
+                        <tr>
+                            <td><input class="logBtn" type="submit" value="Войти"></td>
+                        </tr>
+                        <tr>
+                            <td><a class="textLog" onclick="showReg(1)">Еще не зарегистрированы?<br>Давайте исправим это!</a></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+            <div class="divRegForm">
+                <form id="regForm" method="POST">
+                    <table>
+                        <tr><td><a>Ваше имя:</a></td></tr>
+                        <tr>
+                            <td><input class="textAr" type="text" placeholder="Гарри" required ></td>
+                        </tr>
+                        <tr><td><a>Ваша фамилия:</a></td></tr>
+                        <tr>
+                            <td><input class="textAr" type="text" placeholder="Поттер" required ></td>
+                        </tr>
+                        <tr><td><a>Ваш имейл:</a></td></tr>
+                        <tr>
+                            <td><input class="textAr" type="email" placeholder="example@email.com" required ></td>
+                        </tr>
+                        <tr><td><a>Придумайте логин для входа:</a></td></tr>
+                        <tr>
+                            <td><input class="textAr" type="text" placeholder="AndreyBOBOyobo" required ></td>
+                        </tr>
+                        <tr><td><a>Придумайте пароль для входа:</a></td></tr>
+                        <tr>
+                            <td><input class="textAr" type="password" placeholder="*****" required ></td>
+                        </tr>
+                        <tr><td><a>Повторно введите пароль:</a></td></tr>
+                        <tr>
+                            <td><input class="textAr" type="password" placeholder="*****" required >
+                                <a class="checkText">Пароли не совпадают!</a></td>
+                        </tr>
+                        <tr>
+                            <td><input id="regBtn" type="submit" value="Зарегистрироваться"></td>
+                        </tr>
+                        <tr>
+                            <td><a class="textLog" onclick="showReg(2)">Уже зарегистрированы?</a></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
         </div>
     </div>
     <div class="gamePage">
@@ -36,6 +134,14 @@
             </div>
         </div>
     </div>
+    <footer>
+        <div class="menu">
+            <button type="button" value="1" class="play" id="playId" onclick="changePage(value)">Play</button>
+            <button type="button" class="settings" title="Настройки музыки и звуков" onclick="settingsPopup()">Settings</button>
+            <button type="button" class="register" onclick="loginPopup()">Login</button>
+            <button type="button" class="share" title="Поделиться игрой с друзьями!">Share</button>
+        </div>
+    </footer>
     <script type="text/javascript" src="script.js"></script>
 </body>
 </html>
