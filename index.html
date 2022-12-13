@@ -10,7 +10,7 @@
         <div class="menu">
             <button type="button" value="1" class="play" id="playId" onclick="changePage(value)">Play</button>
             <button type="button" class="settings">Settings</button>
-            <button type="button" class="register">Register</button>
+            <button type="button" class="register" onclick="loginPopup()">Register</button>
             <button type="button" class="share">Share this game</button>
         </div>
         <div class="topPlayers">
@@ -20,6 +20,12 @@
                     <th>Score</th>
                 </tr>
             </table>
+        </div>
+    </div>
+    <div id="my_modal" class="modal">
+        <div class="modal_content">
+            <span class="close_modal_window"></span>
+            <a>Тут пока ничего нет. Потому что мне выключили свет. Я бегал везде, где он появлялся, и просто не успел...</a>
         </div>
     </div>
     <div class="gamePage">
